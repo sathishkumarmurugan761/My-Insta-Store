@@ -1,0 +1,133 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2048%2048%22%20aria-label%3D%22MyStore%20logo%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22fv%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23ff9900%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%23ff4d8d%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%237a5cff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20rx%3D%2214%22%20fill%3D%22url%28%23fv%29%22%2F%3E%3Cpath%20d%3D%22M14%2019h20l-1.6%2015a3%203%200%2001-3%202.7H18.6a3%203%200%2001-3-2.7z%22%20fill%3D%22%23fff%22%20fill-opacity%3D%22.95%22%2F%3E%3Cpath%20d%3D%22M18.5%2019v-2.5a5.5%205.5%200%200111%200V19%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M24%2024.5l1.4%203.1%203.1%201.4-3.1%201.4L24%2033.5l-1.4-3.1-3.1-1.4%203.1-1.4z%22%20fill%3D%22url%28%23fv%29%22%2F%3E%3C%2Fsvg%3E"></head><body>
+<title>My Insta Store</title>
+<script>document.write('<link rel="stylesheet" href="style.css?v='+Math.floor(Date.now()/60000)+'">')</script>
+<header class="top">
+  <div class="logo"><span class="lgm"><svg viewBox="0 0 48 48" aria-label="MyStore logo"><defs><linearGradient id="mslg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff9900"/><stop offset=".55" stop-color="#ff4d8d"/><stop offset="1" stop-color="#7a5cff"/></linearGradient></defs><rect width="48" height="48" rx="14" fill="url(#mslg)"/><path d="M14 19h20l-1.6 15a3 3 0 01-3 2.7H18.6a3 3 0 01-3-2.7z" fill="#fff" fill-opacity=".95"/><path d="M18.5 19v-2.5a5.5 5.5 0 0111 0V19" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M24 24.5l1.4 3.1 3.1 1.4-3.1 1.4L24 33.5l-1.4-3.1-3.1-1.4 3.1-1.4z" fill="url(#mslg)"/></svg></span>My<b>Store</b></div>
+  
+  <div id="auth"></div>
+</header>
+<div class="loc" id="loc"></div>
+<nav class="sub" id="cats"></nav>
+<section class="hero" id="hero"><h1 id="hT">Today Special Deals 🔥</h1><p id="hS">Shop your favourite products with one tap</p><div id="hE" style="margin-top:10px"></div></section>
+<main id="vHome">
+  <div id="od" hidden></div>
+  <div id="dealstrip"></div>
+  <div class="tb">
+    <div><span id="cnt"></span></div>
+    <div style="display:flex;gap:8px">
+      <button class="or" id="adm" hidden>+ Add Product</button>
+      <button class="gh" id="fb">⚙ Filters</button><select id="so"><option value="f">Featured</option><option value="l">Price: Low to High</option><option value="h">Price: High to Low</option></select>
+    </div>
+  </div>
+  <div class="panel" id="fp" hidden><div style="display:flex;gap:8px;flex-wrap:wrap"><div style="flex:1"><label>Min ₹</label><input type="text" id="f1" inputmode="numeric"></div><div style="flex:1"><label>Max ₹</label><input type="text" id="f2" inputmode="numeric"></div><div style="flex:1"><label>Discount</label><select id="f3"><option value="0">Any</option><option value="10">10%+</option><option value="30">30%+</option><option value="50">50%+</option></select></div></div><button class="gh" id="fc" style="margin-top:8px">Clear filters</button></div>
+  <div id="hs"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<main id="vBrowse" hidden><form class="sb" id="sf" style="margin-bottom:12px;max-width:720px"><input type="text" id="q" placeholder="Search products"><button type="button" class="ib" id="mic" title="Voice search">🎤</button><button type="button" class="ib" id="lens" title="Lens">📷</button><button type="submit">🔍</button></form><input type="file" id="lf" accept="image/*" hidden><div id="bg"></div></main>
+<main id="vCart" hidden><h2>🛒 Cart</h2><div id="cb"></div></main>
+<main id="vWallet" hidden><h2>👛 Wallet</h2><div id="wb"></div></main>
+<main id="vAccount" hidden><h2>👤 Account</h2><div id="ab"></div></main>
+<nav class="bn" id="bn"><i class="ind" id="ind"></i><button data-v="Home" class="on"><span>🏠</span>Home</button><button data-v="Browse"><span>🔎</span>Browse</button><button data-v="Cart"><span>🛒</span>Cart<i class="bdg" id="cc" hidden>0</i></button><button data-v="Account"><span>👤</span>Account</button></nav>
+<div class="ov" id="lo2"><div class="modal"><button class="x" id="lx" aria-label="Close">✕</button><h2>📍 Delivery location</h2><input type="text" id="lt" placeholder="City or pincode"><button class="yl" id="ls">Save</button><button class="gh" id="lg">📡 Use my current location</button></div></div>
+
+<div class="ov" id="ov"><div class="modal">
+  <button class="x" id="mx" aria-label="Close">✕</button>
+  <div id="s1" style="display:grid;gap:10px"><h2>Login</h2>
+    <div><label>Name (username)</label><input type="text" id="ln" maxlength="40" autocomplete="username"></div>
+    <div><label>Password</label><input type="password" id="lpw" autocomplete="current-password"></div>
+    <div class="err" id="e1"></div><button class="yl" id="lgo">Login</button>
+    <div style="border-top:1px solid var(--line);padding-top:10px;text-align:center"><div class="note" style="margin-bottom:6px">Don't have an account?</div><button class="or" id="tc" style="width:100%">Create account</button><button class="gh" id="tow" style="width:100%;margin-top:8px">🔐 Owner login</button></div></div>
+  <div id="s2" style="display:grid;gap:10px" hidden><h2>Create account</h2>
+    <div><label>Name (username)</label><input type="text" id="cn" maxlength="40" autocomplete="username"></div>
+    <div><label>Mobile number</label><input type="text" id="cph" inputmode="numeric" maxlength="10" placeholder="10 digit mobile number"></div>
+    <div><label>Password (min 6 characters)</label><input type="password" id="cp1" autocomplete="new-password"></div>
+    <div><label>Confirm password</label><input type="password" id="cp2" autocomplete="new-password"></div>
+    <div class="err" id="e2"></div><button class="yl" id="cgo">Send OTP</button>
+    <div style="border-top:1px solid var(--line);padding-top:10px;text-align:center"><div class="note" style="margin-bottom:6px">Already have an account?</div><button class="gh" id="tl" style="width:100%">Back to Login</button></div></div>
+  <div id="s3" style="display:grid;gap:10px" hidden><h2>Save login info?</h2>
+    <div class="note">Save your login on this device to sign in automatically next time?</div>
+    <button class="yl" id="sv">Save info</button><button class="gh" id="ns">Not now</button></div>
+  <div id="s4" style="display:grid;gap:10px" hidden><h2>OTP Verify</h2><div class="note" id="sent"></div>
+    <div class="demo" id="demo"></div>
+    <div class="note">⚠️ Demo: sending a real SMS needs a backend and an SMS service. For now the OTP is shown on screen.</div>
+    <input type="text" class="otp" id="ot" inputmode="numeric" maxlength="6" placeholder="------">
+    <div class="err" id="e4"></div><button class="yl" id="vf">Verify &amp; Create account</button>
+    <button class="gh" id="rs">Resend OTP</button><button class="gh" id="ch">Change details</button></div>
+</div></div>
+
+<div class="ov" id="pv"><div class="modal wide"><button class="x" id="px" aria-label="Close">✕</button><div id="pvb"></div></div></div>
+
+<div class="ov" id="sy"><div class="modal wide"><button class="x" id="syx">✕</button><h2>☁️ GitHub Sync</h2>
+<div class="note">First time mattum. Idhukku apram ⬆ Upload tap panna, neenga add panna products ella mobile-layum theriyum.</div>
+<label>GitHub repo (username/repo)</label><input id="sy_r" placeholder="sathishkumarmurugan761/My-Insta-Store" autocomplete="off" autocapitalize="off">
+<label>Branch</label><input id="sy_b" value="main" autocomplete="off" autocapitalize="off">
+<label>GitHub token (Contents: Read &amp; write)</label><input id="sy_t" type="password" placeholder="github_pat_..." autocomplete="off">
+<div class="note">Token is stored only on this device. Never share it.</div>
+<div class="err" id="sy_e"></div>
+<button class="yl" id="sy_s">Save &amp; Upload now</button></div></div>
+<div class="ov" id="ad"><div class="modal wide">
+  <button class="x" id="ax" aria-label="Close">✕</button><h2>Add Product</h2>
+  <div><label>Product name *</label><input type="text" id="a_n"></div>
+  <div><label>Category</label><select id="a_c"><option value="">Auto-detect (from product name)</option><option>Mobiles</option><option>Electronics</option><option>Appliances</option><option>Kids &amp; Toys</option><option>Furniture</option><option>Beauty</option><option>Books</option></select></div>
+  <div style="display:flex;gap:8px"><div style="flex:1"><label>Price ₹ *</label><input type="text" id="a_p" inputmode="numeric"></div>
+  <div style="flex:1"><label>MRP ₹ (optional)</label><input type="text" id="a_m" inputmode="numeric"></div></div>
+  <div><label>Product link * (Amazon, Meesho etc.)</label><input type="url" id="a_l" placeholder="https://...">
+  <div style="display:flex;gap:10px;align-items:center;margin-top:6px"><img id="a_pv" alt="" hidden style="width:72px;height:72px;object-fit:cover;border-radius:8px;background:var(--line)"><div style="flex:1"><div class="note" id="a_st">Paste a link and details + photo are fetched automatically.</div><button class="gh" id="a_fb" type="button" style="margin-top:4px;padding:4px 10px;font-size:.8rem">🔍 Fetch again</button></div></div></div>
+  <div><label>Brand / Mobile name</label><input type="text" id="a_b" placeholder="e.g. Samsung, boAt"></div>
+  <div><label>Seller site (auto from link, or type manually)</label><input type="text" id="a_sel" list="sellers" placeholder="e.g. Amazon, Flipkart, Meesho"><datalist id="sellers"><option value="Amazon"><option value="Flipkart"><option value="Meesho"><option value="Myntra"><option value="Ajio"><option value="Nykaa"><option value="Snapdeal"><option value="Croma"></datalist></div>
+  <div style="display:flex;gap:8px"><div style="flex:1"><label>Rating (out of 5)</label><input type="text" id="a_rt" inputmode="decimal" placeholder="4.3"></div><div style="flex:1"><label>No. of ratings</label><input type="text" id="a_rc" placeholder="1,234 ratings"></div></div>
+  <div style="display:flex;gap:8px"><div style="flex:1"><label>Colour</label><input type="text" id="a_co"></div><div style="flex:1"><label>Size</label><input type="text" id="a_sz"></div></div>
+  <div><label>Stock</label><select id="a_sk"><option value="in">In stock</option><option value="out">Out of stock</option></select></div>
+  <div><label>Top highlights (one per line, "Key: Value")</label><textarea id="a_hl" rows="3" placeholder="Display: 6.5 inch&#10;Battery: 5000 mAh"></textarea></div>
+  <div><label>About this item (one point per line)</label><textarea id="a_d" rows="4"></textarea></div>
+  <div><label>Specifications (one per line, "Key: Value")</label><textarea id="a_sp" rows="4" placeholder="RAM: 8 GB&#10;Storage: 128 GB"></textarea></div>
+  <div><label>Photo (select one if auto-fetch fails)</label><input type="file" id="a_f" accept="image/*"></div>
+  <button class="or" id="a_s">Save &amp; Publish</button>
+</div></div>
+<div class="ov" id="pm"><div class="modal"><button class="x" id="pmx" aria-label="Close">✕</button><h2>Edit profile</h2>
+<div style="display:flex;align-items:center;gap:12px"><div class="av" id="pav" style="cursor:default"></div><div style="flex:1"><label>Profile photo</label><input type="file" id="pf" accept="image/*"><button class="rm" id="prp" type="button">Remove photo</button></div></div>
+<div><label>Name</label><input type="text" id="pn" maxlength="40"></div>
+<div><label>Email (optional)</label><input type="text" id="pe" maxlength="80" placeholder="you@example.com"></div>
+<div><label>Username (login name)</label><input type="text" id="pph" disabled></div>
+<div><label>Mobile number</label><input type="text" id="pmb" disabled></div>
+<h3 style="margin:6px 0 0">🔑 Password</h3>
+<div class="note" id="pwn"></div>
+<div id="pocw"><label>Current password</label><input type="password" id="pwo" autocomplete="current-password"></div>
+<div><label>New password (min 6 characters)</label><input type="password" id="pw1" autocomplete="new-password"></div>
+<div><label>Confirm new password</label><input type="password" id="pw2" autocomplete="new-password"></div>
+<div class="err" id="pe_err"></div>
+<button class="yl" id="ps">Save changes</button></div></div>
+<div class="ov" id="cr"><div class="modal">
+<h2>✂️ Crop photo</h2>
+<div class="note">Drag to adjust the photo and use the slider to zoom.</div>
+<canvas id="crc" width="280" height="280" style="width:280px;max-width:100%;aspect-ratio:1/1;margin:0 auto;border-radius:10px;background:#000;touch-action:none;cursor:grab"></canvas>
+<input type="range" id="crz" min="1" max="4" step="0.01" value="1" aria-label="Zoom">
+<div style="display:flex;gap:8px"><button class="gh" id="crx" style="flex:1">Cancel</button><button class="yl" id="cry" style="flex:1">Use photo</button></div>
+</div></div>
+<div class="ov" id="lgm"><div class="modal" style="max-width:300px;padding:0;gap:0;text-align:center;overflow:hidden">
+<div style="padding:22px 16px 18px;display:grid;gap:8px;justify-items:center"><div class="av" id="lga" style="cursor:default"></div><div style="font-size:1.05rem;font-weight:700" id="lgt"></div><div class="note">You will need your name and password to log in again.</div></div>
+<button id="lgy" style="background:none;border-radius:0;border-top:1px solid var(--line);color:#ed4956;font-weight:700;padding:13px">Log out</button>
+<button id="lgn" style="background:none;border-radius:0;border-top:1px solid var(--line);color:var(--text);padding:13px;font-weight:400">Cancel</button>
+</div></div>
+<div class="ov" id="am"><div class="modal"><button class="x" id="amx" aria-label="Close">✕</button><h2>Add address</h2><div><label>Full name</label><input type="text" id="s_n"></div><div><label>Mobile number</label><input type="text" id="s_p" inputmode="numeric" maxlength="10"></div><div><label>House no, street, area</label><input type="text" id="s_l"></div><div style="display:flex;gap:8px"><div style="flex:1"><label>City</label><input type="text" id="s_c"></div><div style="flex:1"><label>Pincode</label><input type="text" id="s_z" inputmode="numeric" maxlength="6"></div></div><div class="err" id="s_e"></div><button class="yl" id="s_s">Save address</button></div></div>
+<div class="ov" id="om"><div class="modal"><button class="x" id="omx" aria-label="Close">✕</button><h2>🔐 Owner login</h2>
+<div><label>Owner username</label><input type="text" id="oid" autocomplete="username"></div>
+<div><label>Password</label><input type="password" id="opw" autocomplete="current-password"></div>
+<div class="err" id="oerr"></div><button class="yl" id="ogo">Login as owner</button></div></div>
+<div style="display:none"><button class="rm" id="olk" style="text-align:center;font-size:.75rem">Owner login</button></div>
+<div class="ov" id="dm"><div class="modal wide"><button class="x" id="dmx" aria-label="Close">✕</button><h2>⚡ Customize Today Special Deals</h2>
+<div><label>Banner title</label><input type="text" id="dm_t" maxlength="60"></div>
+<div><label>Banner text</label><input type="text" id="dm_s" maxlength="120"></div>
+<div><label>Banner colour</label><div id="dm_th" style="display:flex;gap:10px;flex-wrap:wrap"></div></div>
+<label style="display:flex;gap:8px;align-items:center;color:var(--text)"><input type="checkbox" id="dm_show" style="width:auto"> Show banner to customers</label>
+<div><label>Today's picks (products shown in the deals strip)</label><div id="dm_list" style="max-height:220px;overflow:auto;display:grid;gap:6px;margin-top:4px"></div></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="gh" id="dm_clr" style="flex:1">🗑 Remove all picks</button><button class="gh" id="dm_rst" style="flex:1">↩ Reset banner</button></div>
+<div class="err" id="dm_e"></div><button class="yl" id="dm_save">Save</button></div></div>
+<div class="ov" id="dg"><div class="modal" style="max-width:320px"><div id="dgm" style="font-weight:600"></div><input type="text" id="dgi" hidden><div style="display:flex;gap:8px"><button class="gh" id="dgn" style="flex:1">Cancel</button><button class="yl" id="dgy" style="flex:1">OK</button></div></div></div>
+<div id="toast" hidden></div>
+
+<script type="application/json" id="data">[{"id":1,"name":"Sample Wireless Earbuds","cat":"Electronics","price":"799","mrp":"1999","desc":"Sample product. Owner: remove this and add your own products.","link":"https://www.amazon.in","img":"","emoji":"🎧"},{"id":2,"name":"Sample Smart Watch","cat":"Electronics","price":"1299","mrp":"2999","desc":"Sample product.","link":"https://www.amazon.in","img":"","emoji":"⌚","stock":"in"},{"id":3,"name":"Sample Face Serum","cat":"Beauty","price":"499","mrp":"","desc":"Sample product.","link":"https://www.amazon.in","img":"","emoji":"🧴"}]</script>
+<script type="application/json" id="cfg">{"title":"Today Special Deals 🔥","sub":"Shop your favourite products with one tap","show":true,"theme":"sunset","deals":[]}</script>
+<script>document.write('<script src="app.js?v='+Math.floor(Date.now()/60000)+'"><\/script>')</script>
+
+</body></html>
